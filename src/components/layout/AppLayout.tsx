@@ -49,7 +49,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Mobile bottom nav */}
-      <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-t border-white/80 px-2 py-1 safe-area-pb">
+      <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-xl border-t border-white/80 px-2 py-1 safe-area-pb pointer-events-auto">
         <div className="flex items-center justify-around">
           {navItems.map(item => {
             const isActive = location.pathname === item.path

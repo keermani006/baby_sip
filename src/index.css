@@ -20,7 +20,15 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
 /* Safe area for iPhone notch */
 .safe-area-pb {
-  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Support safe areas in fixed positioning */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
 }
 
 /* Smooth scrolling */
