@@ -31,6 +31,14 @@ h1, h2, h3, h4, h5, h6, .font-display {
   }
 }
 
+/* Mobile bottom nav spacing - prevents content from hiding under fixed nav */
+/* Bottom nav is ~4rem height (h-auto with py-1 and icon), plus safe area */
+@media (max-width: 640px) {
+  main {
+    padding-bottom: max(calc(4rem + 1.5rem), calc(4rem + env(safe-area-inset-bottom) + 0.5rem)) !important;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

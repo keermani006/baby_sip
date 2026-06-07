@@ -44,7 +44,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Main content */}
-      <main className="sm:ml-56 pb-24 sm:pb-6 min-h-screen relative z-10">
+      <main className="sm:ml-56 sm:pb-6 min-h-screen relative z-10">
         {children}
       </main>
 
