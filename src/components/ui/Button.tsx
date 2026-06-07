@@ -30,7 +30,10 @@ export function FAB({ onClick, icon = '+' }: { onClick: () => void; icon?: React
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-20 right-4 z-50 w-14 h-14 bg-gradient-to-br from-sky-400 to-sky-600 text-white rounded-full shadow-glass-lg flex items-center justify-center active:scale-95 transition-all hover:shadow-xl animate-bounce-soft"
+      className="fixed right-4 z-50 w-14 h-14 bg-gradient-to-br from-sky-400 to-sky-600 text-white rounded-full shadow-glass-lg flex items-center justify-center active:scale-95 transition-all hover:shadow-xl animate-bounce-soft sm:bottom-6"
+      style={{
+        bottom: 'calc(4rem + 1rem + env(safe-area-inset-bottom))'
+      }}
       aria-label="Add feed"
     >
       {typeof icon === 'string' ? <span className="text-2xl font-display font-800">{icon}</span> : icon}
