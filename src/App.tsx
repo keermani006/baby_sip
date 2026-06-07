@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { BabyProvider } from './context/BabyContext'
 import { AppLayout } from './components/layout/AppLayout'
+import { SplashScreen } from './components/SplashScreen'
 import { DashboardPage } from './pages/Dashboard'
 import { HistoryPage } from './pages/History'
 import { AnalyticsPage } from './pages/Analytics'
@@ -9,6 +10,20 @@ import { WeightPage } from './pages/Weight'
 import { SettingsPage } from './pages/Settings'
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(() => {
+    const hasSeenSplash = sessionStorage.getItem('babysip_splash_seen')
+    return !hasSeenSplash
+  })
+
+  useEffect(() => {
+    if (!showSplash) return
+    sessionStorage.setItem('babysip_splash_seen', 'true')
+  }, [showSplash])
+
+  if (showSplash) {
+    return <SplashScreen onComplete={() => setShowSplash(false)} />
+  }
+
   return (
     <BabyProvider>
       <BrowserRouter>

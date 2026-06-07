@@ -61,3 +61,73 @@ input[type="number"] { -moz-appearance: textfield; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #bae0ff; border-radius: 4px; }
+
+/* Splash screen animations */
+@keyframes splash-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-fade-in-delayed-1 {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splash-fade-in-delayed-2 {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splash-fade-in-delayed-3 {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-splash-scale {
+  animation: splash-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-splash-fade-in-delayed-1 {
+  animation: splash-fade-in-delayed-1 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-splash-fade-in-delayed-2 {
+  animation: splash-fade-in-delayed-2 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-splash-fade-in-delayed-3 {
+  animation: splash-fade-in-delayed-3 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
