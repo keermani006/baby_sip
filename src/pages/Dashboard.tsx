@@ -38,21 +38,25 @@ export function DashboardPage() {
 
   if (!activeBaby) {
     return (
-      <div className="px-4 pt-12">
+      <div className="px-4 pt-12 pb-28 sm:pb-8 flex flex-col justify-center min-h-[75vh]">
         <div className="flex items-center gap-2 mb-6">
           <h1 className="font-display font-900 text-2xl text-gray-800 flex-1">BabySip</h1>
         </div>
-        <EmptyState
-          icon={<Baby className="w-12 h-12" />}
-          title="Welcome to BabySip"
-          subtitle="Add your first baby to get started tracking feeds."
-          action={
-            <button onClick={() => setBabyModalOpen(true)}
-              className="mt-2 px-6 py-3 bg-gradient-to-r from-sky-400 to-sky-500 text-white rounded-xl font-display font-700 shadow-md">
-              Add Baby
-            </button>
-          }
-        />
+        <div className="flex-1 flex items-center justify-center">
+          <EmptyState
+            icon={<Baby className="w-12 h-12" />}
+            title="Welcome to BabySip"
+            subtitle="Add your first baby to get started tracking feeds."
+            action={
+              <div className="mt-4 flex items-center justify-center w-full px-4 safe-area-pb">
+                <button onClick={() => setBabyModalOpen(true)}
+                  className="px-8 py-3.5 bg-gradient-to-r from-sky-400 to-sky-500 text-white rounded-xl font-display font-700 shadow-md hover:from-sky-500 hover:to-sky-600 transition-all active:scale-[0.98] w-full sm:w-auto">
+                  Add Baby
+                </button>
+              </div>
+            }
+          />
+        </div>
         <BabyModal open={babyModalOpen} onClose={() => setBabyModalOpen(false)} />
       </div>
     )
