@@ -10,11 +10,11 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
   useEffect(() => {
     const fadeOutTimer = setTimeout(() => {
       setIsVisible(false)
-    }, 1800)
+    }, 4500)
 
     const completeTimer = setTimeout(() => {
       onComplete()
-    }, 2400)
+    }, 5000)
 
     return () => {
       clearTimeout(fadeOutTimer)
@@ -31,22 +31,28 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
         background: 'linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 50%, #f0fdf7 100%)'
       }}
     >
-      <div className="flex flex-col items-center justify-center gap-6 px-4">
+      <div className="flex flex-col items-center justify-center gap-8 px-4">
         {/* Logo/Icon */}
-        <div
-          className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-sky-500 flex items-center justify-center text-white shadow-glass-lg animate-splash-scale"
-          aria-hidden="true"
-        >
-          <svg
-            className="w-8 h-8"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M12 2c-6 0-8 3-8 8s2 8 8 8 8-3 8-8-2-8-8-8Z" />
-            <path d="M12 6v8M8 10h8" />
-          </svg>
+        <div className="relative animate-splash-scale" aria-hidden="true">
+          <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-sky-400 to-sky-500 flex items-center justify-center text-white shadow-glass-lg">
+            <svg
+              className="w-10 h-10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {/* Professional feeding bottle icon */}
+              <path d="M8 2h8v3c0 1.5-1 2.5-2.5 2.5h-3C9 7.5 8 6.5 8 5V2Z" />
+              <path d="M7 5h10" />
+              <path d="M8 5v13c0 1.5 1 2 2 2h4c1 0 2-0.5 2-2V5" />
+              <path d="M9 8h6" />
+              <circle cx="12" cy="11" r="1.5" fill="currentColor" opacity="0.4" />
+            </svg>
+          </div>
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-400 to-sky-500 opacity-20 blur-xl"></div>
         </div>
 
         {/* App Name */}

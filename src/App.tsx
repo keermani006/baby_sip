@@ -10,15 +10,7 @@ import { WeightPage } from './pages/Weight'
 import { SettingsPage } from './pages/Settings'
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(() => {
-    const hasSeenSplash = sessionStorage.getItem('babysip_splash_seen')
-    return !hasSeenSplash
-  })
-
-  useEffect(() => {
-    if (!showSplash) return
-    sessionStorage.setItem('babysip_splash_seen', 'true')
-  }, [showSplash])
+  const [showSplash, setShowSplash] = useState(true)
 
   if (showSplash) {
     return <SplashScreen onComplete={() => setShowSplash(false)} />
