@@ -175,6 +175,8 @@ export function SettingsPage() {
           <h2 className="font-display font-900 text-xl text-sky-500">BabySip</h2>
           <p className="text-xs font-body text-gray-400 mt-1">Version 1.0.0 · All data stored locally</p>
           <p className="text-xs font-body text-gray-300 mt-0.5">No cloud · No account · 100% private</p>
+          <p className="text-xs font-body text-gray-300 mt-0.5">Built by Keermani Pamishetty</p>
+          
         </GlassCard>
       </div>
     </div>
